@@ -24,7 +24,7 @@ It allows users to create, view, edit, and delete blog posts — all within a cl
 ---
 
 ## 📂 Folder Structure
-
+```
 Blog Project/
 │
 ├── public/
@@ -48,7 +48,7 @@ Blog Project/
 ├── package.json
 ├── package-lock.json
 └── README.md
-
+```
 ---
 
 ## 🧑‍💻 Author
