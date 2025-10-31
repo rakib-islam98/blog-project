@@ -1,0 +1,41 @@
+    <%- include("partials/header.ejs") %>
+    <!-- Blog posts -->
+        <% if(locals.postArray.length===0) { %>
+        <h2>Nothing to show</h2>
+        <% } else {%>
+            <% postArray.forEach((element,index) => { %>
+                <% if(index%2===0) { %>
+                    <!-- when index is even no like 0,2,4..create a new row -->
+                    <div class="row g-4">
+                <% } %>
+                <!-- a post of col-6 will be created -->
+                <!-- col for post -->
+                <div class="col-md-6">
+                    <div class="row g-0 align-items-stretch border rounded shadow-sm mb-4 h-md-250">
+                        <div class="col-md-8 p-2 d-flex flex-column justify-content-center">
+                            <h3 class="mb-1 text-truncate">
+                                <%= element["title"] %>
+                            </h3>
+                            <div class="mb-2 text-body-secondary">
+                                <%= element["author"] %> | <%= element["date"] %>
+                            </div>
+                            <p class="mb-2 text-truncate">
+                                <%= element["content"].slice(0,50) %>
+                            </p>
+                            <a href="/post/<%= element["id"] %> " class="icon-link gap-1 icon-link-hover">Continue reading</a>
+                        </div>
+                        <!-- col for image -->
+                        <div class="col-md-4">
+                            <img src="/images/qi-bin-w4hbafegiac-unsplash.jpg" class="img-fluid rounded-start h-100 w-100 object-fit-cover"
+                                alt="blog post placeholder image">
+                        </div>
+                    </div>
+                </div>
+                <!-- if index is odd like 1,3..or last post of postArr..close the row div -->
+                <% if(index%2===1 || index===postArray.length-1) {%>
+                    </div>
+                <% } %>
+            <% }); %>
+        <% } %>
+    <%- include("partials/creation-form.ejs") %>
+    <%- include("partials/footer.ejs") %>

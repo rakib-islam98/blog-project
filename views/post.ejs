@@ -1,0 +1,6 @@
+<%- include("partials/header.ejs") %>
+<h1><%= currPost["title"] %></h1>
+<h2>by <%= currPost["author"] %> ,<%= currPost["date"] %> </h2>
+<p><%= currPost["content"] %></p>
+<%- include("partials/creation-form.ejs") %>
+<%- include("partials/footer.ejs") %>

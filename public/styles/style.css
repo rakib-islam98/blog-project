@@ -1,0 +1,15 @@
+#formContainer, #formEditContainer {
+    position: fixed;
+    z-index: 999;
+    top: 10%;
+    left: 25%;
+    max-width: 50%;
+}
+
+form div #content {
+    resize: none;
+}
+
+.h-fill{
+    height: -webkit-fill-available;
+}
